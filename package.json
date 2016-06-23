@@ -1,0 +1,19 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "My first Telegram Bot on Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Malik/Bot.git"
+  },
+  "author": "Alex Malik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Malik/Bot/issues"
+  },
+  "homepage": "https://github.com/Alex-Malik/Bot#readme"
+}
