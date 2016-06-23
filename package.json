@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Alex-Malik/Bot/issues"
   },
-  "homepage": "https://github.com/Alex-Malik/Bot#readme"
+  "homepage": "https://github.com/Alex-Malik/Bot#readme",
+  "engines": {
+    "node": "6.2.2"
+  }
 }
