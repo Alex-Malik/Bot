@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Alex-Malik/Bot#readme",
   "engines": {
-    "node": "6.2.2"
+    "node": "6.2.2",
+    "npm": "3.9.5"
   }
 }
