@@ -9,8 +9,8 @@ const server = http.createServer((req, res) => {
   res.end('Hello World\n');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}/`);
+// });
 
 // http://127.0.0.1:3000/
