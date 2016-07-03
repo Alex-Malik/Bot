@@ -1,37 +1,47 @@
-const http = require('http');
-const url = require('url');
-const server = http.createServer(onRequest).listen(process.env.PORT || 5000);
-const controllers = {
-  'home': require('./server/controllers/home.js'),
-  'auth': require('./server/controllers/auth.js'),
-  'api': require('./server/controllers/api.js'),
-  'error': require('./server/controllers/error.js')
+// Require libs
+const HTTP = require('http');
+const URL = require('url');
+const SWIG = require('swig');
+SWIG.setDefaults({ cache: false }); // Disables caching in Swig.
+
+// Define possible routes
+const ROUTER = {
+  'home': require('./routes/home.js'),
+  'auth': require('./routes/auth.js'),
+  'api': require('./routes/api.js'),
+  'error': require('./routes/error.js'),
+  'content': require('./routes/content.js')
 }
 
+// Run the server
+const SERVER = HTTP.createServer(onRequest).listen(process.env.PORT || 5000);
+
+// The handler for any request. It is the
+// entry point for every request from the client.
 function onRequest(request, response) {
   try {
-    // Log server activity
-    console.log(request.method + ': ' + request.url);
+    // Parse URL from request to handle routing
+    var url = URL.parse(request.url);
 
     // TODO: check authorization before answering and
     // redirect to ligin page if user is not authorized
 
-    // Parse url from request to handle routing
-    var urlParts = url.parse(request.url);
+    // Log server activity
+    console.log(request.method.toLowerCase() + ': ' + url.href);
 
     // Handle request and switch to corresponding controller method
-    if (urlParts.pathname === '/') {
-      controllers['home'].handle(request, response);
-      //require('./server/controllers/home.js').handle(request, response);
-    } else if (urlParts.pathname === '/auth') {
-      controllers['auth'].handle(request, response);
-    } else if (urlParts.pathname === '/api') {
-      controllers['api'].handle(request, response);
+    if (url.pathname === '/') {
+      ROUTER.home.handle(request, response);
+    } else if (url.pathname.startsWith('/auth')) {
+      ROUTER.auth.handle(request, response, SWIG);
+    } else if (url.pathname.startsWith('/api')) {
+      ROUTER.api.handle(request, response);
+    } else if(url.pathname.startsWith('/content')) {
+      ROUTER.content.handle(request, response);
     } else {
-      controllers['error'].handleNotFound(request, response);
+      ROUTER.error.handleNotFound(request, response);
     }
-  }
-  catch(exception) {
-    controllers['error'].handleError(request, response);
+  } catch(exception) {
+    ROUTER.error.handleError(request, response, exception);
   }
 }
