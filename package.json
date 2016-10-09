@@ -1,7 +1,7 @@
 {
-  "name": "bot",
+  "name": "ancient-gorge-49647",
   "version": "1.0.0",
-  "description": "My first Telegram Bot on Node.js",
+  "description": "My first app on Node.js",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alex-Malik/Bot.git"
+    "url": "git+https://github.com/Alex-Malik/ancient-gorge-49647.git"
   },
   "author": "Alex Malik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Alex-Malik/Bot/issues"
+    "url": "https://github.com/Alex-Malik/ancient-gorge-49647/issues"
   },
-  "homepage": "https://github.com/Alex-Malik/Bot#readme",
+  "homepage": "https://github.com/Alex-Malik/ancient-gorge-49647#readme",
   "engines": {
     "node": "6.2.2",
     "npm": "3.9.5"
