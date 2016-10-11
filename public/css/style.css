@@ -1,3 +1,26 @@
 html, body {
-  background-image: url('/public/img/index.png');
+  background-image: url('/public/img/background.png');
+  font-family: "Courier New", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+input {
+  font-family: "Courier New", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.info-box label {
+  display: block;
+  max-width: 25%;
+  text-overflow: ellipsis;
+}
+
+.info-box label.name {
+  color: #aaa;
+}
+
+.info-box label.value {
+  color: #fff;
 }

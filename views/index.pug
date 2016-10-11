@@ -2,5 +2,17 @@ html
     head
         title hello world
         link(rel='stylesheet', href='/public/css/style.css')
+
+        script(src='/public/js/jquery-3.1.1.min.js')
+        script(src='/public/js/index.js')
     body
-        | hello world
+        input#fb-login.btn(type='button', value='Login with FB')
+        div#fb-info.info-box
+            label.name Access Token
+            label#fb-accessToken.value
+            label.name Expires In
+            label#fb-expiresIn.value
+            label.name Signed Request
+            label#fb-signedRequest.value
+            label.name User ID
+            label#fb-userID.value
